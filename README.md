@@ -1,69 +1,116 @@
-# React + TypeScript + Vite
+# E-Commerce Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive e-commerce application built with React, TypeScript, and Material-UI.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Authentication System**: Secure login with static credentials
+- **Product Catalog**: Browse products with beautiful card layouts
+- **Shopping Cart**: Add, remove, and manage cart items with quantity controls
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Persistent State**: Cart and login state persist across browser sessions
+- **Modern UI**: Clean, gradient-based design with smooth animations
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React 19 + TypeScript 5.8
+- **Styling**: Material-UI (MUI) v7
+- **Routing**: React Router v7
+- **Build Tool**: Vite v7
+- **State Management**: React Context + Custom Hooks
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Prerequisites
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd ecommerce-app
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+```bash
+npm install
 ```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+### Login Credentials
+
+- **Username**: admin
+- **Password**: 123456
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── Cart.tsx        # Shopping cart component
+│   ├── Footer.tsx      # Footer component
+│   ├── Header.tsx      # Navigation header
+│   ├── Layout.tsx      # Layout wrapper
+│   ├── Login.tsx       # Login form
+│   └── ProductList.tsx # Product catalog
+├── context/            # React context providers
+│   └── AppContext.tsx  # Global app state
+├── data/              # Static data
+│   └── mockData.ts    # Products and credentials
+├── hooks/             # Custom React hooks
+│   ├── useAuth.ts     # Authentication logic
+│   └── useCart.ts     # Cart management
+├── types/             # TypeScript type definitions
+│   └── index.ts       # App interfaces
+├── App.tsx            # Main app component
+└── main.tsx          # App entry point
+```
+
+## Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+
+## Features Overview
+
+### Authentication
+- Secure login system with form validation
+- Persistent login state using localStorage
+- Automatic redirect to login on unauthorized access
+
+### Product Management
+- Grid-based product display
+- Product cards with images, descriptions, and prices
+- Responsive layout adapting to screen size
+
+### Shopping Cart
+- Add products to cart with quantity management
+- Update quantities or remove items
+- Real-time cart total calculation
+- Cart state persistence across sessions
+
+### Responsive Design
+- Mobile-first approach
+- Adaptive layouts for different screen sizes
+- Touch-friendly interface elements
+
+## Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+
+## License
+
+This project is licensed under the MIT License.
