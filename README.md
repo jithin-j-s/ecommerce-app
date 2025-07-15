@@ -30,7 +30,7 @@ A modern, responsive e-commerce application built with React, TypeScript, and Ma
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/jithin-j-s/ecommerce-app.git
 cd ecommerce-app
 ```
 
